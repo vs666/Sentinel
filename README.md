@@ -13,10 +13,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">project_title</h3>
+  <h3 align="center">SENTINEL</h3>
 
   <p align="center">
-    project_description
+    A database leak tolerant system.
     <br />
     <a href="https://github.com/vs666/Sentinel/blob/main/docs/DOCS.md"><strong>Explore the docs »</strong></a>
     <br />
