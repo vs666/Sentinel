@@ -1,35 +1,175 @@
-# SENTINEL NETWORK
-
-A Business to Business authentication service, which is database leak tolerant.
-
-
-## v1.0 Centralized Auth 
-
-We use an exclusive key which is read-only by the administrator, and use this key to generate a random hash for a given email and password. This is done on a sub-net within the network. 
-
-The sub-net is callable by administrator run scripts (figure out a little). This sub-net is called while generating a mapping number for authentication. The random mapper is as secure as the exclusive (additive) security of admin's system plus, admin's key is.
-
-This key is used as a mapper to find the E-mail ID associated, let it be `E1`.
-Now, we find HASH using hash of password `H1`, and `E1` along with mapper number `n`.
-We also apply salting to H1 to make it `H2` = salt1+`H1`+salt2
-> I am trying to make the salt, a function of the input hash itself.
-The expected matching hash should be H(H(`E1`+`n`)+H(`n`+`H2`))
+<!-- [![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 
-Note that to make the password database like a normal salted password database, we would require to know the number n, which implies knowing the admin's key. This in turn implies having admin access to the sub-net.
 
-Notice that this means a rudimentary database leak cannot imply a password leak and in light terms, security of any password is : 
+<br />
+<p align="center">
+  <a href="https://github.com/vs666/Sentinel">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-Security(password) >= (system_security(ADMIN_SYSTEM)+system_security(ADMIN_KEY))*(crypto_security(password))
+  <h3 align="center">project_title</h3>
 
-### Drawbacks 
+  <p align="center">
+    project_description
+    <br />
+    <a href="https://github.com/vs666/Sentinel/blob/main/docs/DOCS.md"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <!-- <a href="https://github.com/github_username/repo_name">View Demo</a> -->
+    ·
+    <a href="https://github.com/vs666/Sentinel/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/vs666/Sentinel/issues">Request Feature</a>
+  </p>
+</p>
 
-1. Increased latency
-2. Data leak is also a potential system_security flaw, so if an infiltrator can break-into database, he/she can break into the system itself too.
 
-Do-over (v1.1)
-We can use concept of  [Obfuscated Scripts](https://unix.stackexchange.com/questions/90178/how-can-i-either-encrypt-or-render-my-shell-script-unreadable/178325).
 
-But this again has [problems](https://www.linuxjournal.com/article/8256)
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
-## Decentralized Authentication
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
+
+Here's a blank template to get started:
+**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
+`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
+
+
+### Built With
+
+* []()
+* []()
+* []()
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/github_username/repo_name.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+_For more examples, please refer to the [Documentation](https://example.com)_
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+
+Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* []()
+* []()
+* []()
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
+[contributors-url]: https://github.com/github_username/repo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
+[forks-url]: https://github.com/github_username/repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
+[stars-url]: https://github.com/github_username/repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
+[issues-url]: https://github.com/github_username/repo/issues
+[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
+[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/github_username
