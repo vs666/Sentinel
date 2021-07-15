@@ -71,16 +71,15 @@ Here's a blank template to get started:
 
 ### Built With
 
-* []()
-* []()
-* []()
+* [PYTHON 3](https://www.python.org/)
+* [REACT JS](https://reactjs.org/)
+* [SHELL SCRIPT](https://www.shellscript.sh/)
+* :heart:
 
 
-
-<!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+First let us start, then we'll tell how to get started.
 
 ### Prerequisites
 
@@ -94,28 +93,31 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/vs666/Sentinel.git
    ```
-2. Install NPM packages
+2. Install NPM packages (go to web-app folder and then run)
    ```sh
    npm install
    ```
+3. Install Python3 packages 
+    ```sh
+    pip3 install requirements.txt
+    ```
 
 
 
-<!-- USAGE EXAMPLES -->
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Documentation](https://github.com/vs666/Sentinel/blob/main/docs/DOCS.md)_
 
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/vs666/Sentinel/issues) for a list of proposed features (and known issues).
 
 
 
@@ -131,7 +133,6 @@ Contributions are what make the open source community such an amazing place to b
 5. Open a Pull Request
 
 
-
 <!-- LICENSE -->
 ## License
 
@@ -142,7 +143,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+Your Name - [@VarulSrivastava](https://twitter.com/VarulSrivastava) - email
 
 Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
 
