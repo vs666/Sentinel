@@ -10,7 +10,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/vs666/Sentinel">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="misc_assets/sentinel-logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">SENTINEL</h3>
@@ -21,7 +21,7 @@
     <a href="https://github.com/vs666/Sentinel/blob/main/docs/DOCS.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <!-- <a href="https://github.com/github_username/repo_name">View Demo</a> -->
+    <!-- <a href="https://github.com/vs666/repo_name">View Demo</a> -->
     ·
     <a href="https://github.com/vs666/Sentinel/issues">Report Bug</a>
     ·
@@ -66,7 +66,7 @@
 
 Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
+`vs666`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
 
 
 ### Built With
@@ -143,34 +143,26 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@VarulSrivastava](https://twitter.com/VarulSrivastava) - email
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
+Varul Srivastava    
+[@VarulSrivastava](https://twitter.com/VarulSrivastava)   
 
 
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
 
-* []()
-* []()
-* []()
-
-
+Project Link: [https://github.com/vs666/repo_name](https://github.com/vs666/repo_name)
 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/vs666/repo.svg?style=for-the-badge
+[contributors-url]: https://github.com/vs666/repo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/vs666/repo.svg?style=for-the-badge
+[forks-url]: https://github.com/vs666/repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/vs666/repo.svg?style=for-the-badge
+[stars-url]: https://github.com/vs666/repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/vs666/repo.svg?style=for-the-badge
+[issues-url]: https://github.com/vs666/repo/issues
+[license-shield]: https://img.shields.io/github/license/vs666/repo.svg?style=for-the-badge
+[license-url]: https://github.com/vs666/repo/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/github_username
+[linkedin-url]: https://linkedin.com/in/vs666
