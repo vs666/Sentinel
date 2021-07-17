@@ -21,7 +21,7 @@
     <a href="https://github.com/vs666/Sentinel/blob/main/docs/DOCS.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <!-- <a href="https://github.com/vs666/repo_name">View Demo</a> -->
+    <!-- <a href="https://github.com/vs666/Sentinel">View Demo</a> -->
     ·
     <a href="https://github.com/vs666/Sentinel/issues">Report Bug</a>
     ·
@@ -52,6 +52,7 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
+    <li><a href="#future-work">Future Work</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
@@ -64,10 +65,9 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`vs666`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
+Sentinel is an authentication (Sign-up & Sign-in) system, that claims high tolerance to database leaks, by increasing the complexity of dictionary attacks for cracking passwords.
 
+We aim to be a **B2B Solution**. The first release is aimed towards the Summer Up Hackathon for IIIT Hyderabad. 
 
 ### Built With
 
@@ -80,6 +80,10 @@ Here's a blank template to get started:
 ## Getting Started
 
 First let us start, then we'll tell how to get started.
+
+### Whitepaper 
+
+Coming soon....
 
 ### Prerequisites
 
@@ -108,9 +112,18 @@ This is an example of how to list things you need to use the software and how to
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+This code-base is not a library, but needs to be split between different portions of the server ( view whitepaper for the architecture and the setup of the server ). 
 
 _For more examples, please refer to the [Documentation](https://github.com/vs666/Sentinel/blob/main/docs/DOCS.md)_
+
+
+## Future Work 
+
+In future we aim to release subsequent versions with the following changes : 
+
+v1.1 - Aim to incorporate the option of subscription, (by business clients) to use the server as their authentication service.
+
+v2.0 - Aim to add the feature of fault tolerance (PBFT), when we scale up the protocol to run on distributed server system. Might need to modify the protocol and/or existing code-base a bit.
 
 
 
@@ -148,21 +161,21 @@ Varul Srivastava
 
 
 
-Project Link: [https://github.com/vs666/repo_name](https://github.com/vs666/repo_name)
+Project Link: [https://github.com/vs666/Sentinel](https://github.com/vs666/Sentinel)
 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/vs666/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/vs666/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/vs666/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/vs666/repo/network/members
+[contributors-shield]: https://img.shields.io/github/contributors/vs666/Sentinel.svg?style=for-the-badge
+[contributors-url]: https://github.com/vs666/Sentinel/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/vs666/Sentinel.svg?style=for-the-badge
+[forks-url]: https://github.com/vs666/Sentinel/network/members
 [stars-shield]: https://img.shields.io/github/stars/vs666/repo.svg?style=for-the-badge
 [stars-url]: https://github.com/vs666/repo/stargazers
 [issues-shield]: https://img.shields.io/github/issues/vs666/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/vs666/repo/issues
-[license-shield]: https://img.shields.io/github/license/vs666/repo.svg?style=for-the-badge
-[license-url]: https://github.com/vs666/repo/blob/master/LICENSE.txt
+[issues-url]: https://github.com/vs666/Sentinel/issues
+[license-shield]: https://img.shields.io/github/license/vs666/Sentinel.svg?style=for-the-badge
+[license-url]: https://github.com/vs666/Sentinel/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/vs666
+[linkedin-url]: https://www.linkedin.com/in/varul-srivastava-497547198/
