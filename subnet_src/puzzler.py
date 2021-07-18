@@ -37,6 +37,7 @@ def modexponent(a,b,q=1):
 
 
 def puzzle_gen(email,pass_hash):
+    print(email,pass_hash)
     thex = hashlib.sha256(bytes(email+pass_hash,encoding='utf-8')).hexdigest() # get the pun ?
 
     a,b = splitHash(thex)
