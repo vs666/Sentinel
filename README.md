@@ -149,7 +149,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under a License with specific instructions for commercial use or distribution. See `LICENSE` for more information.
 
 
 
