@@ -8,15 +8,21 @@ app = Flask(__name__)
 def solve_puzzle():
     # print('hello world')
     # return request.get_json()
-    # # print(request.view_args)
+    # print(request.get_data())
     username = request.get_json()['username']
     password = request.get_json()['password']
+    print('USERNAME => ',username,'PASSWORD => ',password)
     mad = request.get_json()['mac_address']
     '''
         check mac-address here
     '''
     num = puzzle_gen(username,password)
+    print("NUMBER IS : ",num)
     return {"number":num}
+
+@app.route('/ping')
+def ping():
+    return 'Server subnet is up'
 
 if __name__ == '__main__':
     # run the app
