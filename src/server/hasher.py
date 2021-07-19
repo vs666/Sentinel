@@ -3,8 +3,8 @@ import requests
 import uuid
 from server_config import LOCKED_URL
 
-def hashify(password,mapped_email):
-    thorax = hashlib.sha256(bytes(password+mapped_email,encoding='utf-8')).hexdigest()
+def hashify(password,mapped_email,num):
+    thorax = hashlib.sha256(bytes(password+mapped_email+str(num),encoding='utf-8')).hexdigest()
     return thorax
 
 def getNumber(username,password):
