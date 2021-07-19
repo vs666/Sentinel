@@ -8,6 +8,7 @@ def hashify(password,mapped_email):
     return thorax
 
 def getNumber(username,password):
-    r = requests.get(url=LOCKED_URL+'/solve_puzzle',params={"mac_address":uuid.getnode(),"username":username,"password":password})
+    r = requests.get(url=LOCKED_URL+'/solve_puzzle',json={"mac_address":uuid.getnode(),"username":username,"password":password})
+    print('KACHING',r)
     data = r.json()
     return data['number']

@@ -17,4 +17,5 @@ MODE = 'DEBUG'
 # random urls don't judge
 DEFAULT_TARGET_URL = 'https://www.google.com'
 DEFAULT_FALLBACK_URL = 'https://www.iiit.ac.in'
-LOCKED_URL = '127.0.0.1:9000'
+LOCKED_URL = 'http://127.0.0.1:9000'
+NF_URL = 'https://www.notfound.co.in'

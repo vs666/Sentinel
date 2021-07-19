@@ -1,15 +1,17 @@
 # this file contains methods necessary for DB operations
 import sys
+
+from hasher import getNumber,hashify
 sys.path.append('./../')
 
 from datetime import datetime
-from server_config import DATABASE_NAME,COLLECTION_NAME,MODE
+from server_config import DATABASE_NAME,COLLECTION_NAME,MODE,NF_URL
 from puzzler import puzzle_gen
 
 def verifyDictionary(d):
     from server_config import sample_dict
     assert(type(d) ==  type(sample_dict))
-
+    return True
     expectedKeys = sample_dict.keys()
     for i in d.keys():
         if i not in expectedKeys:
@@ -61,7 +63,7 @@ def compose(username,contested_password,index_number):
 
     try:
         from hasher import hashify
-        return hashify(contested_password,data_from_db)
+        return hashify(contested_password,data_from_db['username'])
     except:
         print('LOG:: [',datetime.now().strftime("%d-%m-%Y||%H:%M:%S"),'] => Index Number doesnot match any entry')
         if MODE == 'DEBUG':
@@ -78,12 +80,35 @@ def verify(username,password):
     db_collection = db_object[COLLECTION_NAME]
 
     # get all the data from the database
-    data_from_db = db_collection.find()
+    data_from_db = db_collection.find_one({'username':username})
+    if data_from_db == None:
+        return NF_URL
+    if data_from_db['username'] == username and compose(username,password,data_from_db['index']) == data_from_db['password'] and data_from_db['password']!='invalid':
+        return data_from_db['target_url']
+    else:
+        return data_from_db['fallback_url']
+    
 
-    # iterate over all the data in the database
-    # O(n) is too complex, reduce using indexes 
-    for i in data_from_db:
-        # check if the username and password matches
-        if i['username'] == username and compose(password,i['index']) == i['password'] and i['password']!='invalid':
-            return True
-    return False
+    
+def hashify_pass(username,password):
+    '''
+        this function creates hash of the password
+    '''
+    from pymongo import MongoClient
+    db_location = MongoClient("mongodb://localhost:27017/")
+    db_object = db_location[DATABASE_NAME]
+    db_collection = db_object[COLLECTION_NAME]
+
+    num = getNumber(username, password)
+    if db_collection.find_one({'username':username})!= None:
+        print('LOG:: [',datetime.now().strftime("%d-%m-%Y||%H:%M:%S"),'] => Entry already exists')
+        return None,-1
+
+    # get all the data from the database
+    data_from_db = db_collection.count()
+    print("NUM IS :: ",data_from_db)
+    index = data_from_db
+    mapped_id = db_collection.find_one({"index":(num%index)})
+    print('mapped ID is :: ',mapped_id)
+    return hashify(password,mapped_id['username']),index
+    
