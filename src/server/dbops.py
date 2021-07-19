@@ -53,17 +53,17 @@ def compose(username,contested_password,index_number):
         this function composes the complex hash stored as  a database
     '''
     from hasher import getNumber
-    contested_id = getNumber(username,contested_password)%index_number
+    contested_id = getNumber(username,contested_password)
     from pymongo import MongoClient
     db_location = MongoClient('mongodb://localhost:27017')
     db_object = db_location[DATABASE_NAME]
     db_collection = db_object[COLLECTION_NAME]
 
-    data_from_db = db_collection.find_one({'index':contested_id})
+    data_from_db = db_collection.find_one({'index':contested_id%index_number})
 
     try:
         from hasher import hashify
-        return hashify(contested_password,data_from_db['username'])
+        return hashify(contested_password,data_from_db['username'],contested_id)
     except:
         print('LOG:: [',datetime.now().strftime("%d-%m-%Y||%H:%M:%S"),'] => Index Number doesnot match any entry')
         if MODE == 'DEBUG':
@@ -106,9 +106,8 @@ def hashify_pass(username,password):
 
     # get all the data from the database
     data_from_db = db_collection.count()
-    print("NUM IS :: ",data_from_db)
     index = data_from_db
     mapped_id = db_collection.find_one({"index":(num%index)})
     print('mapped ID is :: ',mapped_id)
-    return hashify(password,mapped_id['username']),index
+    return hashify(password,mapped_id['username'],num),index
     
