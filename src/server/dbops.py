@@ -22,7 +22,7 @@ def verifyDictionary(d):
 
 
 def appendData(data_dictionary):
-    ''' 
+    '''
         this function appends the data to mongodb database
     '''
     from pymongo import MongoClient
@@ -34,7 +34,7 @@ def appendData(data_dictionary):
 
 
     if verifyDictionary(data_dictionary):
-        # verified 
+        # verified
         try:
             db_collection.insert_one(data_dictionary)
             return True
@@ -69,7 +69,7 @@ def compose(username,contested_password,index_number):
         if MODE == 'DEBUG':
             print(f'DATA => username ::  {username}, password :: {contested_password}, index_number :: {index_number}')
         return 'invalid'
-    
+
 def verify(username,password):
     '''
         this function verifies the username and password
@@ -87,9 +87,9 @@ def verify(username,password):
         return data_from_db['target_url']
     else:
         return data_from_db['fallback_url']
-    
 
-    
+
+
 def hashify_pass(username,password):
     '''
         this function creates hash of the password
@@ -110,4 +110,3 @@ def hashify_pass(username,password):
     mapped_id = db_collection.find_one({"index":(num%index)})
     print('mapped ID is :: ',mapped_id)
     return hashify(password,mapped_id['username'],num),index
-    
