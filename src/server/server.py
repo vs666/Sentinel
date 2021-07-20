@@ -13,7 +13,7 @@ def authenticate():
         explore the option of receiveing hashed password
     '''
     print('Request for authentication : ',username,password)
-    
+
     destUrl = verify(username,password)
     return redirect(destUrl)
 
@@ -23,12 +23,12 @@ def signUp():
     username = request.get_json()['username']
     password = request.get_json()['password']
     portal = request.get_json()['portal']
-    
+
     # for now we keep the same fallback and target and stuff
     '''
-        Complicate the password here 
+        Complicate the password here
     '''
-    # we also allocate index value here 
+    # we also allocate index value here
     # Now we hope the password has been complicated.
     ddict = {
         "username":username,
@@ -57,7 +57,7 @@ def knock():
     return '''
         <h1> Hey, I am a messenger from the server</h1>
         <p> Don't worry, I am up and running</p>
-    '''        
+    '''
 
 if __name__ == '__main__':
     # run the app
