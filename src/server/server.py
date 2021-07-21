@@ -1,6 +1,6 @@
 from flask import *
 from server_config import PORT,DEFAULT_TARGET_URL,DEFAULT_FALLBACK_URL
-from dbops import hashify_pass,verify
+from dbops import checkSignature, hashify_pass,verify
 # creating a flask app
 app = Flask(__name__)
 
@@ -23,7 +23,6 @@ def signUp():
     username = request.get_json()['username']
     password = request.get_json()['password']
     portal = request.get_json()['portal']
-    
     # for now we keep the same fallback and target and stuff
     '''
         Complicate the password here 
@@ -38,6 +37,23 @@ def signUp():
         "fallback_url":DEFAULT_FALLBACK_URL,
         "index":-1
     }
+    
+    try:
+        ddict['target_url'] = request.get_json()['target_url']
+    except:
+        ddict['target_url'] = DEFAULT_TARGET_URL
+    try:
+        ddict['fallback_url'] = request.get_json()['fallback_url']
+    except:
+        ddict['fallback_url'] = DEFAULT_FALLBACK_URL
+    try:
+        #  check the signature here only
+        proposed_signature = request.get_json()['signature']
+        from dbops import checkSignature
+        if not checkSignature(portal,username,password,proposed_signature):
+            return {'status':'failure','reason':'Signature is not valid'}
+    except:
+        pass
     ph,ind = hashify_pass(username,password)
     if ind == -1:
         return {'status':'Failed','log':'Username already exists'}
