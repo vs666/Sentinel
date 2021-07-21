@@ -58,7 +58,7 @@ def compose(username,contested_password,index_number):
     db_location = MongoClient('mongodb://localhost:27017')
     db_object = db_location[DATABASE_NAME]
     db_collection = db_object[COLLECTION_NAME]
-
+    index_number+=1
     data_from_db = db_collection.find_one({'index':contested_id%index_number})
 
     try:
@@ -88,7 +88,23 @@ def verify(username,password):
     else:
         return data_from_db['fallback_url']
     
-
+def checkSignature(portal,username,password,signature):
+    '''
+        this function verifies the signature
+    '''
+    from pymongo import MongoClient
+    db_location = MongoClient("mongodb://localhost:27017/")
+    db_object = db_location[DATABASE_NAME]
+    db_collection = db_object[COLLECTION_NAME]
+    data_from_db = db_collection.find_one({'portal':portal})
+    pub_k = data_from_db['public_key'] 
+    from nacl.signing import VerifyKey
+    verf_k = VerifyKey(pub_k)
+    try:
+        verf_k.verify(username+password,signature)
+        return True
+    except:
+        return False
     
 def hashify_pass(username,password):
     '''
