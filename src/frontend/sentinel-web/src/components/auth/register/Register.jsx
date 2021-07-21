@@ -19,9 +19,9 @@ import {
 import useStyles from '../Style';
 import axios from 'axios';
 
-export default function Login(props) {
+export default function Register(props) {
 
-  document.title = 'Sentinel|LogIn';
+  document.title = 'Sentinel|Register';
 
   const classes = useStyles();
   const [formData, setFormData] = useState({
@@ -41,14 +41,14 @@ export default function Login(props) {
   function handleFormSubmit(event){
 
     axios
-      .post('http://localhost:5000/authenticate', formData)
+      .post('http://localhost:5000/signUp', formData)
       .then(res => {
-        console.log('Successfully authenticated!');
+        console.log('Successfully registered!');
       })
       .catch(err => {
         console.error(err);
         if(err.response){
-          alert('Your credentials are wrong!');
+          alert('There was some error with your details!');
         }
         else{
           alert('There was some problem authenticating with the server.\n\nTry again later!');
@@ -59,7 +59,7 @@ export default function Login(props) {
   };
 
   return (
-    <div className='LogIn'>
+    <div className='Register'>
       <Container component='main' maxWidth='sm'>
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
@@ -67,7 +67,7 @@ export default function Login(props) {
           </Avatar>
 
           <Typography component='h1' variant='h5'>
-            LogIn
+            Register
           </Typography>
 
           <form className={classes.form} onSubmit={handleFormSubmit}>
@@ -123,7 +123,7 @@ export default function Login(props) {
                   variant='contained'
                   color='primary'
                   className={classes.submit}
-                >Log In</Button>
+                >Register</Button>
               </Grid>
 
             </Grid>
