@@ -23,10 +23,7 @@ def signUp():
     username = request.get_json()['username']
     password = request.get_json()['password']
     portal = request.get_json()['portal']
-<<<<<<< HEAD
-=======
 
->>>>>>> 45861bd5ede17659b1fc66c3de7972c90ba2e19d
     # for now we keep the same fallback and target and stuff
     '''
         Complicate the password here
@@ -41,7 +38,7 @@ def signUp():
         "fallback_url":DEFAULT_FALLBACK_URL,
         "index":-1
     }
-    
+
     try:
         ddict['target_url'] = request.get_json()['target_url']
     except:

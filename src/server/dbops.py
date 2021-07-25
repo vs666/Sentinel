@@ -87,8 +87,7 @@ def verify(username,password):
         return data_from_db['target_url']
     else:
         return data_from_db['fallback_url']
-<<<<<<< HEAD
-    
+
 def checkSignature(portal,username,password,signature):
     '''
         this function verifies the signature
@@ -98,7 +97,7 @@ def checkSignature(portal,username,password,signature):
     db_object = db_location[DATABASE_NAME]
     db_collection = db_object[COLLECTION_NAME]
     data_from_db = db_collection.find_one({'portal':portal})
-    pub_k = data_from_db['public_key'] 
+    pub_k = data_from_db['public_key']
     from nacl.signing import VerifyKey
     verf_k = VerifyKey(pub_k)
     try:
@@ -106,12 +105,7 @@ def checkSignature(portal,username,password,signature):
         return True
     except:
         return False
-    
-=======
 
-
-
->>>>>>> 45861bd5ede17659b1fc66c3de7972c90ba2e19d
 def hashify_pass(username,password):
     '''
         this function creates hash of the password
