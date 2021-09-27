@@ -102,7 +102,7 @@ def checkSignature(portal,username,password,signature):
     db_object = db_location[DATABASE_NAME]
     db_collection = db_object[COLLECTION_NAME]
     data_from_db = db_collection.find_one({'portal':portal})
-    pub_k = data_from_db['public_key'] 
+    pub_k = data_from_db['public_key']
     from nacl.signing import VerifyKey
     verf_k = VerifyKey(pub_k)
     try:

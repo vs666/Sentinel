@@ -75,7 +75,7 @@ def signUp():
         "fallback_url":DEFAULT_FALLBACK_URL,
         "index":-1
     }
-    
+
     try:
         ddict['target_url'] = request.get_json()['target_url']
     except:
