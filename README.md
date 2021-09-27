@@ -178,7 +178,10 @@ Distributed under a License with specific instructions for commercial use or dis
 ## Contact
 
 Varul Srivastava    
-[@VarulSrivastava](https://twitter.com/VarulSrivastava)   
+[@VarulSrivastava | Twitter](https://twitter.com/VarulSrivastava)   
+
+Akshett Jindal    
+[E-Mail](mailto:akshett.jindal@research.iiit.ac.in)   
 
 
 
