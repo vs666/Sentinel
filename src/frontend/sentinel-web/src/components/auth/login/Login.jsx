@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { sha256 } from 'crypto-js/sha256'
 import {
   Avatar,
   Button,
@@ -30,27 +30,37 @@ export default function Login(props) {
     portal: ''
   });
 
-  function handleFormChange(event){
-    const {name, value} = event.target;
+  function handleFormChange(event) {
+    const { name, value } = event.target;
     setFormData(oldData => ({
       ...oldData,
       [name]: value
     }));
   };
 
-  function handleFormSubmit(event){
-
+  function handleFormSubmit(event) {
+    // done to prevent any accidental revelation of passwords
+    
+    // formData.password = sha256(formData.password).toString();
     axios
       .post('http://localhost:5000/authenticate', formData)
-      .then(res => {
-        console.log('Successfully authenticated!');
+      .then(res =>
+        {
+          console.log(res);
+          if (res.data.status == 'Failed'){
+            alert(res.data.log);
+          }
+          else if (res.data.url){
+            alert('This site will redirect');
+            window.location.href = res.data.url;
+          }
       })
       .catch(err => {
         console.error(err);
-        if(err.response){
+        if (err.response) {
           alert('Your credentials are wrong!');
         }
-        else{
+        else {
           alert('There was some problem authenticating with the server.\n\nTry again later!');
         }
       })

@@ -28,9 +28,8 @@ def authenticate():
             explore the option of receiveing hashed password
         '''
         # RUN Verification with portal stuff ????
-        print('We got till here')
         destUrl = verify(username,password,portal or 'DEFAULT')
-        return {'url':destUrl}
+        return redirect(destUrl)
     except:
         return {'status':'Failed','log':'Unhandled server exception'}
 

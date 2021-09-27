@@ -1,6 +1,9 @@
+from logging import debug
 from flask import *
 from puzzler import puzzle_gen
 from config import PORT
+import sys
+import multiprocessing
 # creating a flask app
 app = Flask(__name__)
 
@@ -24,14 +27,22 @@ def solve_puzzle():
 def ping():
     return 'Server subnet is up'
 
+def start_server(_PORT):
+    debug('starting server')
+    app.run(port=_PORT,debug=True)
+
 if __name__ == '__main__':
     # run the app
-    app.run(debug=True,port=PORT)
+    processes = []
+    # number of ports
+    nPorts = int(sys.argv[2])
+    nPorts = min(nPorts,10) # max 10 to spare my innocent PC :P 
+    for i in range(nPorts):
+        p = multiprocessing.Process(target=start_server,args=[PORT+i])
+        p.start()
+        processes.append(p) 
+
+    # PORT = int(sys.argv[1]) 
+    # app.run(debug=True,port=PORT)
 
 
-
-# with app.test_client() as c:
-#     rv = c.post('/solve_puzzle',json={
-#         'username':'dodo.zozo','password':'kronos','mac_address':'maddy'})
-#     json_data = rv.get_json()
-#     print(json_data)

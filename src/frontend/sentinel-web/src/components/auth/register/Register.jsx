@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { sha256 } from 'crypto-js/sha256';
 import {
   Avatar,
   Button,
@@ -40,6 +40,7 @@ export default function Register(props) {
 
   function handleFormSubmit(event){
 
+    // formData.password = sha256(formData.password).toString();
     axios
       .post('http://localhost:5000/signUp', formData)
       .then(res => {

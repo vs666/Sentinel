@@ -1,4 +1,4 @@
-from hashlib import sha256
+# from hashlib import sha256
 from typing import Protocol
 from flask import *
 import flask
@@ -14,7 +14,7 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 
 
 @app.route('/authenticate',methods=['GET','POST'])
-def authenticate():
+def authenticate(request):
     try:
         username = request.get_json()['username']
         password = request.get_json()['password']
@@ -28,11 +28,10 @@ def authenticate():
             explore the option of receiveing hashed password
         '''
         # RUN Verification with portal stuff ????
-        print('We got till here')
         destUrl = verify(username,password,portal or 'DEFAULT')
-        return {'url':destUrl}
+        return {'redirect':destUrl},'REDIRECT'
     except:
-        return {'status':'Failed','log':'Unhandled server exception'}
+        return {'status':'Failed','log':'Unhandled server exception'},'JSON'
 
 @app.route('/signUp',methods=['GET','POST'])
 def signUp():
